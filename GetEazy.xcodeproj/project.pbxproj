@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */; };
+		15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF41B3FEBB1005CFA5D /* GetEazy.xcdatamodeld */; };
+		15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF71B3FEBB1005CFA5D /* ViewController.swift */; };
+		15F12FFB1B3FEBB1005CFA5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F12FF91B3FEBB1005CFA5D /* Main.storyboard */; };
+		15F130001B3FEBB1005CFA5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15F12FFE1B3FEBB1005CFA5D /* LaunchScreen.xib */; };
+		15F1300C1B3FEBB1005CFA5D /* GetEazyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1300B1B3FEBB1005CFA5D /* GetEazyTests.swift */; };
+		15F130161B3FEC0B005CFA5D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130151B3FEC0B005CFA5D /* Bolts.framework */; };
+		15F130181B3FEC13005CFA5D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130171B3FEC13005CFA5D /* Parse.framework */; };
+		15F1301A1B3FEC3D005CFA5D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130191B3FEC3D005CFA5D /* AudioToolbox.framework */; };
+		15F1301C1B3FEC47005CFA5D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1301B1B3FEC47005CFA5D /* CFNetwork.framework */; };
+		15F1301E1B3FEC5A005CFA5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1301D1B3FEC5A005CFA5D /* CoreGraphics.framework */; };
+		15F130201B3FEC60005CFA5D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1301F1B3FEC60005CFA5D /* CoreLocation.framework */; };
+		15F130221B3FEC6B005CFA5D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130211B3FEC6B005CFA5D /* MobileCoreServices.framework */; };
+		15F130241B3FEC71005CFA5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130231B3FEC71005CFA5D /* QuartzCore.framework */; };
+		15F130261B3FEC7C005CFA5D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130251B3FEC7C005CFA5D /* Security.framework */; };
+		15F130281B3FEC82005CFA5D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130271B3FEC82005CFA5D /* StoreKit.framework */; };
+		15F1302A1B3FEC8E005CFA5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130291B3FEC8E005CFA5D /* SystemConfiguration.framework */; };
+		15F1302C1B3FEC9C005CFA5D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1302B1B3FEC9C005CFA5D /* libz.dylib */; };
+		15F1302E1B3FECA8005CFA5D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1302D1B3FECA8005CFA5D /* libsqlite3.dylib */; };
+		15F130301B3FED8A005CFA5D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1302F1B3FED8A005CFA5D /* Accounts.framework */; };
+		15F130321B3FED91005CFA5D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130311B3FED91005CFA5D /* Social.framework */; };
+		15F130341B3FF048005CFA5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F130331B3FF048005CFA5D /* Images.xcassets */; };
+		678393E78A7CE0475E72EAD9 /* Pods_GetEazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79820AC937B76945AB289ED /* Pods_GetEazy.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15F130061B3FEBB1005CFA5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15F12FE51B3FEBB1005CFA5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15F12FEC1B3FEBB1005CFA5D;
+			remoteInfo = GetEazy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15F12FED1B3FEBB1005CFA5D /* GetEazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetEazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F12FF11B3FEBB1005CFA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15F12FF51B3FEBB1005CFA5D /* GetEazy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GetEazy.xcdatamodel; sourceTree = "<group>"; };
+		15F12FF71B3FEBB1005CFA5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15F12FFA1B3FEBB1005CFA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15F12FFF1B3FEBB1005CFA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		15F130051B3FEBB1005CFA5D /* GetEazyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetEazyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F1300A1B3FEBB1005CFA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15F1300B1B3FEBB1005CFA5D /* GetEazyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEazyTests.swift; sourceTree = "<group>"; };
+		15F130151B3FEC0B005CFA5D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		15F130171B3FEC13005CFA5D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		15F130191B3FEC3D005CFA5D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		15F1301B1B3FEC47005CFA5D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		15F1301D1B3FEC5A005CFA5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		15F1301F1B3FEC60005CFA5D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		15F130211B3FEC6B005CFA5D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		15F130231B3FEC71005CFA5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		15F130251B3FEC7C005CFA5D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		15F130271B3FEC82005CFA5D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		15F130291B3FEC8E005CFA5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		15F1302B1B3FEC9C005CFA5D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		15F1302D1B3FECA8005CFA5D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		15F1302F1B3FED8A005CFA5D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		15F130311B3FED91005CFA5D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		15F130331B3FF048005CFA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		381B0CB524CDE006DE928246 /* Pods-GetEazy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetEazy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetEazy/Pods-GetEazy.release.xcconfig"; sourceTree = "<group>"; };
+		7C5A40DFD83BBDBCA649D833 /* Pods-GetEazy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetEazy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetEazy/Pods-GetEazy.debug.xcconfig"; sourceTree = "<group>"; };
+		C79820AC937B76945AB289ED /* Pods_GetEazy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetEazy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15F12FEA1B3FEBB1005CFA5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F130321B3FED91005CFA5D /* Social.framework in Frameworks */,
+				15F130301B3FED8A005CFA5D /* Accounts.framework in Frameworks */,
+				15F1302E1B3FECA8005CFA5D /* libsqlite3.dylib in Frameworks */,
+				15F1302C1B3FEC9C005CFA5D /* libz.dylib in Frameworks */,
+				15F1302A1B3FEC8E005CFA5D /* SystemConfiguration.framework in Frameworks */,
+				15F130281B3FEC82005CFA5D /* StoreKit.framework in Frameworks */,
+				15F130261B3FEC7C005CFA5D /* Security.framework in Frameworks */,
+				15F130241B3FEC71005CFA5D /* QuartzCore.framework in Frameworks */,
+				15F130221B3FEC6B005CFA5D /* MobileCoreServices.framework in Frameworks */,
+				15F130201B3FEC60005CFA5D /* CoreLocation.framework in Frameworks */,
+				15F1301E1B3FEC5A005CFA5D /* CoreGraphics.framework in Frameworks */,
+				15F1301C1B3FEC47005CFA5D /* CFNetwork.framework in Frameworks */,
+				15F1301A1B3FEC3D005CFA5D /* AudioToolbox.framework in Frameworks */,
+				15F130181B3FEC13005CFA5D /* Parse.framework in Frameworks */,
+				15F130161B3FEC0B005CFA5D /* Bolts.framework in Frameworks */,
+				678393E78A7CE0475E72EAD9 /* Pods_GetEazy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15F130021B3FEBB1005CFA5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15F12FE41B3FEBB1005CFA5D = {
+			isa = PBXGroup;
+			children = (
+				15F130311B3FED91005CFA5D /* Social.framework */,
+				15F1302F1B3FED8A005CFA5D /* Accounts.framework */,
+				15F1302D1B3FECA8005CFA5D /* libsqlite3.dylib */,
+				15F1302B1B3FEC9C005CFA5D /* libz.dylib */,
+				15F130291B3FEC8E005CFA5D /* SystemConfiguration.framework */,
+				15F130271B3FEC82005CFA5D /* StoreKit.framework */,
+				15F130251B3FEC7C005CFA5D /* Security.framework */,
+				15F130231B3FEC71005CFA5D /* QuartzCore.framework */,
+				15F130211B3FEC6B005CFA5D /* MobileCoreServices.framework */,
+				15F1301F1B3FEC60005CFA5D /* CoreLocation.framework */,
+				15F1301D1B3FEC5A005CFA5D /* CoreGraphics.framework */,
+				15F1301B1B3FEC47005CFA5D /* CFNetwork.framework */,
+				15F130191B3FEC3D005CFA5D /* AudioToolbox.framework */,
+				15F130171B3FEC13005CFA5D /* Parse.framework */,
+				15F130151B3FEC0B005CFA5D /* Bolts.framework */,
+				15F12FEF1B3FEBB1005CFA5D /* GetEazy */,
+				15F130081B3FEBB1005CFA5D /* GetEazyTests */,
+				15F12FEE1B3FEBB1005CFA5D /* Products */,
+				48EAAC043F0BEE77B9E3E476 /* Pods */,
+				3E21D2B35022CE9B0586FFA7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		15F12FEE1B3FEBB1005CFA5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15F12FED1B3FEBB1005CFA5D /* GetEazy.app */,
+				15F130051B3FEBB1005CFA5D /* GetEazyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15F12FEF1B3FEBB1005CFA5D /* GetEazy */ = {
+			isa = PBXGroup;
+			children = (
+				15F130331B3FF048005CFA5D /* Images.xcassets */,
+				15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */,
+				15F12FF71B3FEBB1005CFA5D /* ViewController.swift */,
+				15F12FF91B3FEBB1005CFA5D /* Main.storyboard */,
+				15F12FFE1B3FEBB1005CFA5D /* LaunchScreen.xib */,
+				15F12FF41B3FEBB1005CFA5D /* GetEazy.xcdatamodeld */,
+				15F12FF01B3FEBB1005CFA5D /* Supporting Files */,
+			);
+			path = GetEazy;
+			sourceTree = "<group>";
+		};
+		15F12FF01B3FEBB1005CFA5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15F12FF11B3FEBB1005CFA5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15F130081B3FEBB1005CFA5D /* GetEazyTests */ = {
+			isa = PBXGroup;
+			children = (
+				15F1300B1B3FEBB1005CFA5D /* GetEazyTests.swift */,
+				15F130091B3FEBB1005CFA5D /* Supporting Files */,
+			);
+			path = GetEazyTests;
+			sourceTree = "<group>";
+		};
+		15F130091B3FEBB1005CFA5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15F1300A1B3FEBB1005CFA5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E21D2B35022CE9B0586FFA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C79820AC937B76945AB289ED /* Pods_GetEazy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48EAAC043F0BEE77B9E3E476 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C5A40DFD83BBDBCA649D833 /* Pods-GetEazy.debug.xcconfig */,
+				381B0CB524CDE006DE928246 /* Pods-GetEazy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15F12FEC1B3FEBB1005CFA5D /* GetEazy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F1300F1B3FEBB1005CFA5D /* Build configuration list for PBXNativeTarget "GetEazy" */;
+			buildPhases = (
+				BEA7A37E885F3F3BEB055911 /* Check Pods Manifest.lock */,
+				15F12FE91B3FEBB1005CFA5D /* Sources */,
+				15F12FEA1B3FEBB1005CFA5D /* Frameworks */,
+				15F12FEB1B3FEBB1005CFA5D /* Resources */,
+				AB67CFA66B15FBDB3899CF7A /* Embed Pods Frameworks */,
+				CA546231BD4B8A83E28C182C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GetEazy;
+			productName = GetEazy;
+			productReference = 15F12FED1B3FEBB1005CFA5D /* GetEazy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15F130041B3FEBB1005CFA5D /* GetEazyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F130121B3FEBB1005CFA5D /* Build configuration list for PBXNativeTarget "GetEazyTests" */;
+			buildPhases = (
+				15F130011B3FEBB1005CFA5D /* Sources */,
+				15F130021B3FEBB1005CFA5D /* Frameworks */,
+				15F130031B3FEBB1005CFA5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15F130071B3FEBB1005CFA5D /* PBXTargetDependency */,
+			);
+			name = GetEazyTests;
+			productName = GetEazyTests;
+			productReference = 15F130051B3FEBB1005CFA5D /* GetEazyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15F12FE51B3FEBB1005CFA5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Wrme;
+				TargetAttributes = {
+					15F12FEC1B3FEBB1005CFA5D = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					15F130041B3FEBB1005CFA5D = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 15F12FEC1B3FEBB1005CFA5D;
+					};
+				};
+			};
+			buildConfigurationList = 15F12FE81B3FEBB1005CFA5D /* Build configuration list for PBXProject "GetEazy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15F12FE41B3FEBB1005CFA5D;
+			productRefGroup = 15F12FEE1B3FEBB1005CFA5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15F12FEC1B3FEBB1005CFA5D /* GetEazy */,
+				15F130041B3FEBB1005CFA5D /* GetEazyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15F12FEB1B3FEBB1005CFA5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F130341B3FF048005CFA5D /* Images.xcassets in Resources */,
+				15F12FFB1B3FEBB1005CFA5D /* Main.storyboard in Resources */,
+				15F130001B3FEBB1005CFA5D /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15F130031B3FEBB1005CFA5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB67CFA66B15FBDB3899CF7A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetEazy/Pods-GetEazy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA7A37E885F3F3BEB055911 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA546231BD4B8A83E28C182C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetEazy/Pods-GetEazy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15F12FE91B3FEBB1005CFA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */,
+				15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */,
+				15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15F130011B3FEBB1005CFA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F1300C1B3FEBB1005CFA5D /* GetEazyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15F130071B3FEBB1005CFA5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15F12FEC1B3FEBB1005CFA5D /* GetEazy */;
+			targetProxy = 15F130061B3FEBB1005CFA5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15F12FF91B3FEBB1005CFA5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15F12FFA1B3FEBB1005CFA5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15F12FFE1B3FEBB1005CFA5D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15F12FFF1B3FEBB1005CFA5D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15F1300D1B3FEBB1005CFA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15F1300E1B3FEBB1005CFA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15F130101B3FEBB1005CFA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C5A40DFD83BBDBCA649D833 /* Pods-GetEazy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/idrisjafer/Documents/parse-library-1.7.5",
+				);
+				INFOPLIST_FILE = GetEazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		15F130111B3FEBB1005CFA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 381B0CB524CDE006DE928246 /* Pods-GetEazy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/idrisjafer/Documents/parse-library-1.7.5",
+				);
+				INFOPLIST_FILE = GetEazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		15F130131B3FEBB1005CFA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GetEazyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetEazy.app/GetEazy";
+			};
+			name = Debug;
+		};
+		15F130141B3FEBB1005CFA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GetEazyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetEazy.app/GetEazy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15F12FE81B3FEBB1005CFA5D /* Build configuration list for PBXProject "GetEazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F1300D1B3FEBB1005CFA5D /* Debug */,
+				15F1300E1B3FEBB1005CFA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15F1300F1B3FEBB1005CFA5D /* Build configuration list for PBXNativeTarget "GetEazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F130101B3FEBB1005CFA5D /* Debug */,
+				15F130111B3FEBB1005CFA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15F130121B3FEBB1005CFA5D /* Build configuration list for PBXNativeTarget "GetEazyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F130131B3FEBB1005CFA5D /* Debug */,
+				15F130141B3FEBB1005CFA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		15F12FF41B3FEBB1005CFA5D /* GetEazy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15F12FF51B3FEBB1005CFA5D /* GetEazy.xcdatamodel */,
+			);
+			currentVersion = 15F12FF51B3FEBB1005CFA5D /* GetEazy.xcdatamodel */;
+			path = GetEazy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 15F12FE51B3FEBB1005CFA5D /* Project object */;
+}
