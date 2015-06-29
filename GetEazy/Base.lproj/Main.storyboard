@@ -1,37 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q3Y-Ps-qVG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="79C-dl-epK">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="GetEazy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q3Y-Ps-qVG" customClass="ViewController" customModule="GetEazy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="tl9-j3-5QJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vjA-so-Qkh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="5hE-7S-3vN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eln-JS-fxS">
-                                <rect key="frame" x="262" y="290" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-hJ-vBY" userLabel="MapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <searchBar contentMode="redraw" placeholder="Search Location" translatesAutoresizingMaskIntoConstraints="NO" id="VsY-Q9-m5s">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="eln-JS-fxS" secondAttribute="centerX" id="IuU-Dz-r6K"/>
-                            <constraint firstAttribute="centerY" secondItem="eln-JS-fxS" secondAttribute="centerY" id="MIa-2K-GLd"/>
+                            <constraint firstItem="vjA-so-Qkh" firstAttribute="top" secondItem="GRp-hJ-vBY" secondAttribute="bottom" id="006-bs-5Th"/>
+                            <constraint firstItem="GRp-hJ-vBY" firstAttribute="top" secondItem="VsY-Q9-m5s" secondAttribute="bottom" constant="1" id="EP5-EK-Kg5"/>
+                            <constraint firstItem="VsY-Q9-m5s" firstAttribute="leading" secondItem="5hE-7S-3vN" secondAttribute="leading" id="Hzy-s8-Rb6"/>
+                            <constraint firstItem="VsY-Q9-m5s" firstAttribute="top" secondItem="tl9-j3-5QJ" secondAttribute="bottom" id="ROb-AC-3fP"/>
+                            <constraint firstItem="GRp-hJ-vBY" firstAttribute="leading" secondItem="5hE-7S-3vN" secondAttribute="leading" id="Vbm-Jw-Yd3"/>
+                            <constraint firstAttribute="trailing" secondItem="VsY-Q9-m5s" secondAttribute="trailing" id="ZEv-ch-oAV"/>
+                            <constraint firstAttribute="trailing" secondItem="GRp-hJ-vBY" secondAttribute="trailing" id="pps-ND-m3m"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="GRp-hJ-vBY"/>
+                                <exclude reference="VsY-Q9-m5s"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Hzy-s8-Rb6"/>
+                                <exclude reference="ROb-AC-3fP"/>
+                                <exclude reference="ZEv-ch-oAV"/>
+                                <exclude reference="EP5-EK-Kg5"/>
+                                <exclude reference="Vbm-Jw-Yd3"/>
+                                <exclude reference="pps-ND-m3m"/>
+                                <exclude reference="006-bs-5Th"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="GRp-hJ-vBY"/>
+                                <include reference="VsY-Q9-m5s"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Hzy-s8-Rb6"/>
+                                <include reference="ROb-AC-3fP"/>
+                                <include reference="ZEv-ch-oAV"/>
+                                <include reference="EP5-EK-Kg5"/>
+                                <include reference="Vbm-Jw-Yd3"/>
+                                <include reference="pps-ND-m3m"/>
+                                <include reference="006-bs-5Th"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="GRp-hJ-vBY" id="7lI-uJ-Xcd"/>
+                        <outlet property="searchDisplayController" destination="kb8-sb-joT" id="nA9-T8-28M"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTg-Xx-VTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="zvO-0f-2DC">
+                    <connections>
+                        <outlet property="delegate" destination="q3Y-Ps-qVG" id="7fm-kK-0Zz"/>
+                        <outlet property="searchContentsController" destination="q3Y-Ps-qVG" id="6AA-sU-BNz"/>
+                        <outlet property="searchResultsDataSource" destination="q3Y-Ps-qVG" id="KQB-iY-lGG"/>
+                        <outlet property="searchResultsDelegate" destination="q3Y-Ps-qVG" id="G72-ls-NFh"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="kb8-sb-joT">
+                    <connections>
+                        <outlet property="delegate" destination="q3Y-Ps-qVG" id="QH9-JH-79j"/>
+                        <outlet property="searchContentsController" destination="q3Y-Ps-qVG" id="8On-OI-o8u"/>
+                        <outlet property="searchResultsDataSource" destination="q3Y-Ps-qVG" id="st3-4K-6W2"/>
+                        <outlet property="searchResultsDelegate" destination="q3Y-Ps-qVG" id="UXc-qK-UL3"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="762" y="-168.75"/>
         </scene>
     </scenes>
 </document>

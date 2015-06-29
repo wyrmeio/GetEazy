@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DC53D411-98F8-4FE2-A098-9BF476F28D9E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GetEazy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09AD9065E86D6D3E55E1183BD36D81596A879691</key>
+		<string>https://github.com/wyrmeio/GetEazy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GetEazy.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09AD9065E86D6D3E55E1183BD36D81596A879691</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wyrmeio/GetEazy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09AD9065E86D6D3E55E1183BD36D81596A879691</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09AD9065E86D6D3E55E1183BD36D81596A879691</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GetEazy</string>
+		</dict>
+	</array>
+</dict>
+</plist>

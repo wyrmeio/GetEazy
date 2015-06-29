@@ -9,7 +9,10 @@
 import UIKit
 import Parse
 import Bolts
+import FBSDKCoreKit
+import FBSDKLoginKit
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,16 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+         GMSServices.provideAPIKey("AIzaSyCGgKqEgy8a8BmT2K1NKRjwYYr0BQLPg7Q")
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
-        
         
         // Initialize Parse.
         Parse.setApplicationId("aJJHUZneS561qefbs3R5V3Y0PCptAjGDZD90kJr2",
             clientKey: "HCon4phqAENwsyWs2RkadGfJ3GFYzksG6MuJi2vN")
         
         PFTwitterUtils.initializeWithConsumerKey("VWGv7LdFXTDmp8lPRU4oN2d9U", consumerSecret: "iha8kwwa4Hpq4cYaocRkJwzhVgcLneTMKGb475VkVWCGCgoy9e")
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
@@ -62,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+        //return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -84,6 +90,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
     }
+    
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?) -> Bool {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 
 
     func applicationWillResignActive(application: UIApplication) {
@@ -102,8 +115,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        FBSDKAppEvents.activateApp()
     }
 
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.

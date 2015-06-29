@@ -1,11 +1,3 @@
-platform :ios, "8.0"
-use_frameworks!
+platform :ios, '8.0'
 
-target 'GetEazy' do
-pod 'ParseUI'
-end
-
-target 'GetEazyTests' do
-
-end
-
+pod 'GoogleMaps'
