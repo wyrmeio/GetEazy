@@ -1,10 +1,13 @@
 PODS:
   - GoogleMaps (1.10.1)
+  - GooglePlacesAutocomplete (0.3.0)
 
 DEPENDENCIES:
   - GoogleMaps
+  - GooglePlacesAutocomplete
 
 SPEC CHECKSUMS:
   GoogleMaps: ebf08677f181d9c2dcdbd1721d206f02beccc9b1
+  GooglePlacesAutocomplete: 7694636fce561c9d8ac807b8e490d299a730a633
 
 COCOAPODS: 0.37.2

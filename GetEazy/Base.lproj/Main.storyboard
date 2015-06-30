@@ -16,9 +16,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-hJ-vBY" userLabel="MapView">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgS-9f-FKC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nUV-dq-agg">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="8Jp-e3-Uxq"/>
+                                            <constraint firstAttribute="width" constant="55" id="uql-Ds-yFO"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8Jp-e3-Uxq"/>
+                                                <exclude reference="uql-Ds-yFO"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="8Jp-e3-Uxq"/>
+                                                <include reference="uql-Ds-yFO"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-Xs-DPO">
+                                        <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KTP-Xs-DPO" firstAttribute="top" secondItem="KgS-9f-FKC" secondAttribute="top" constant="13" id="3jC-1s-4Ly"/>
+                                    <constraint firstAttribute="trailing" secondItem="KTP-Xs-DPO" secondAttribute="trailing" constant="8" id="7Rs-pY-OEj"/>
+                                    <constraint firstItem="nUV-dq-agg" firstAttribute="top" secondItem="KgS-9f-FKC" secondAttribute="top" id="RjX-Cc-2Cx"/>
+                                    <constraint firstItem="nUV-dq-agg" firstAttribute="leading" secondItem="KgS-9f-FKC" secondAttribute="leading" id="jMO-zZ-xml"/>
+                                    <constraint firstItem="KTP-Xs-DPO" firstAttribute="leading" secondItem="nUV-dq-agg" secondAttribute="trailing" constant="8" id="mBY-8f-Cfx"/>
+                                    <constraint firstAttribute="height" constant="55" id="toE-gB-fp4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="nUV-dq-agg"/>
+                                        <exclude reference="KTP-Xs-DPO"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="toE-gB-fp4"/>
+                                        <exclude reference="RjX-Cc-2Cx"/>
+                                        <exclude reference="jMO-zZ-xml"/>
+                                        <exclude reference="3jC-1s-4Ly"/>
+                                        <exclude reference="7Rs-pY-OEj"/>
+                                        <exclude reference="mBY-8f-Cfx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="nUV-dq-agg"/>
+                                        <include reference="KTP-Xs-DPO"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="toE-gB-fp4"/>
+                                        <include reference="RjX-Cc-2Cx"/>
+                                        <include reference="jMO-zZ-xml"/>
+                                        <include reference="3jC-1s-4Ly"/>
+                                        <include reference="7Rs-pY-OEj"/>
+                                        <include reference="mBY-8f-Cfx"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-hJ-vBY" userLabel="MapView" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phi-zi-Vbm">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <items>
+                                            <barButtonItem image="location" width="12" id="3Az-OE-fd2">
+                                                <connections>
+                                                    <action selector="getCurrentLocation:" destination="q3Y-Ps-qVG" id="Wir-L1-QBN"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem enabled="NO" systemItem="flexibleSpace" id="167-1t-lt1"/>
+                                            <barButtonItem image="map" id="c21-6C-aLr">
+                                                <connections>
+                                                    <action selector="changeMapType:" destination="q3Y-Ps-qVG" id="MlH-sq-5Zc"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="phi-zi-Vbm" secondAttribute="bottom" id="a9c-2m-Ezn"/>
+                                    <constraint firstAttribute="trailing" secondItem="phi-zi-Vbm" secondAttribute="trailing" id="aPk-dB-qol"/>
+                                    <constraint firstItem="phi-zi-Vbm" firstAttribute="leading" secondItem="GRp-hJ-vBY" secondAttribute="leading" id="fUf-sB-9dW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="phi-zi-Vbm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="a9c-2m-Ezn"/>
+                                        <exclude reference="aPk-dB-qol"/>
+                                        <exclude reference="fUf-sB-9dW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="phi-zi-Vbm"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="a9c-2m-Ezn"/>
+                                        <include reference="aPk-dB-qol"/>
+                                        <include reference="fUf-sB-9dW"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <searchBar contentMode="redraw" placeholder="Search Location" translatesAutoresizingMaskIntoConstraints="NO" id="VsY-Q9-m5s">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -28,15 +137,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vjA-so-Qkh" firstAttribute="top" secondItem="GRp-hJ-vBY" secondAttribute="bottom" id="006-bs-5Th"/>
+                            <constraint firstItem="GRp-hJ-vBY" firstAttribute="top" secondItem="KgS-9f-FKC" secondAttribute="bottom" id="04f-VL-Umg"/>
+                            <constraint firstItem="KgS-9f-FKC" firstAttribute="leading" secondItem="5hE-7S-3vN" secondAttribute="leading" id="DYa-mR-Xdz"/>
                             <constraint firstItem="GRp-hJ-vBY" firstAttribute="top" secondItem="VsY-Q9-m5s" secondAttribute="bottom" constant="1" id="EP5-EK-Kg5"/>
                             <constraint firstItem="VsY-Q9-m5s" firstAttribute="leading" secondItem="5hE-7S-3vN" secondAttribute="leading" id="Hzy-s8-Rb6"/>
+                            <constraint firstItem="KgS-9f-FKC" firstAttribute="top" secondItem="tl9-j3-5QJ" secondAttribute="bottom" id="O11-cp-20n"/>
                             <constraint firstItem="VsY-Q9-m5s" firstAttribute="top" secondItem="tl9-j3-5QJ" secondAttribute="bottom" id="ROb-AC-3fP"/>
+                            <constraint firstAttribute="trailing" secondItem="KgS-9f-FKC" secondAttribute="trailing" id="V40-V5-bbb"/>
                             <constraint firstItem="GRp-hJ-vBY" firstAttribute="leading" secondItem="5hE-7S-3vN" secondAttribute="leading" id="Vbm-Jw-Yd3"/>
                             <constraint firstAttribute="trailing" secondItem="VsY-Q9-m5s" secondAttribute="trailing" id="ZEv-ch-oAV"/>
                             <constraint firstAttribute="trailing" secondItem="GRp-hJ-vBY" secondAttribute="trailing" id="pps-ND-m3m"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="KgS-9f-FKC"/>
                                 <exclude reference="GRp-hJ-vBY"/>
                                 <exclude reference="VsY-Q9-m5s"/>
                             </mask>
@@ -44,6 +158,10 @@
                                 <exclude reference="Hzy-s8-Rb6"/>
                                 <exclude reference="ROb-AC-3fP"/>
                                 <exclude reference="ZEv-ch-oAV"/>
+                                <exclude reference="DYa-mR-Xdz"/>
+                                <exclude reference="O11-cp-20n"/>
+                                <exclude reference="V40-V5-bbb"/>
+                                <exclude reference="04f-VL-Umg"/>
                                 <exclude reference="EP5-EK-Kg5"/>
                                 <exclude reference="Vbm-Jw-Yd3"/>
                                 <exclude reference="pps-ND-m3m"/>
@@ -52,13 +170,18 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="KgS-9f-FKC"/>
                                 <include reference="GRp-hJ-vBY"/>
-                                <include reference="VsY-Q9-m5s"/>
+                                <exclude reference="VsY-Q9-m5s"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Hzy-s8-Rb6"/>
                                 <include reference="ROb-AC-3fP"/>
                                 <include reference="ZEv-ch-oAV"/>
+                                <include reference="DYa-mR-Xdz"/>
+                                <include reference="O11-cp-20n"/>
+                                <include reference="V40-V5-bbb"/>
+                                <include reference="04f-VL-Umg"/>
                                 <include reference="EP5-EK-Kg5"/>
                                 <include reference="Vbm-Jw-Yd3"/>
                                 <include reference="pps-ND-m3m"/>
@@ -67,7 +190,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="GRp-hJ-vBY" id="7lI-uJ-Xcd"/>
+                        <outlet property="location" destination="KTP-Xs-DPO" id="sVZ-ar-ZTX"/>
+                        <outlet property="mapView" destination="GRp-hJ-vBY" id="Ien-Cx-D4P"/>
                         <outlet property="searchDisplayController" destination="kb8-sb-joT" id="nA9-T8-28M"/>
                     </connections>
                 </viewController>
@@ -89,7 +213,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="762" y="-168.75"/>
+            <point key="canvasLocation" x="603" y="-168.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="25" height="25"/>
+        <image name="logo" width="33" height="33"/>
+        <image name="map" width="25" height="25"/>
+    </resources>
 </document>

@@ -35,7 +35,8 @@
 		15F130681B40D617005CFA5D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130671B40D617005CFA5D /* ParseUI.framework */; };
 		15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130691B40DC42005CFA5D /* MyLogInViewController.swift */; };
 		15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */; };
-		E36D1537FFD3840E24BC73A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97976E1074B8B897FEABFBA5 /* libPods.a */; };
+		15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1307F1B426BE5005CFA5D /* LocationManager.swift */; };
+		666EC254818E0DBF4CC37B99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71880253D73E8807085935F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,9 +83,10 @@
 		15F130671B40D617005CFA5D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		15F130691B40DC42005CFA5D /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
 		15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignUpViewController.swift; sourceTree = "<group>"; };
+		15F1307F1B426BE5005CFA5D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2F491A654AF53C1FA7FA2333 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		587FC971A8994DB8271917CB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		97976E1074B8B897FEABFBA5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71880253D73E8807085935F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,7 @@
 				15F1301A1B3FEC3D005CFA5D /* AudioToolbox.framework in Frameworks */,
 				15F130181B3FEC13005CFA5D /* Parse.framework in Frameworks */,
 				15F130161B3FEC0B005CFA5D /* Bolts.framework in Frameworks */,
-				E36D1537FFD3840E24BC73A9 /* libPods.a in Frameworks */,
+				666EC254818E0DBF4CC37B99 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +179,7 @@
 				15F130471B403901005CFA5D /* GetEazy-Bridging-Header.h */,
 				15F130691B40DC42005CFA5D /* MyLogInViewController.swift */,
 				15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */,
+				15F1307F1B426BE5005CFA5D /* LocationManager.swift */,
 			);
 			path = GetEazy;
 			sourceTree = "<group>";
@@ -209,7 +212,7 @@
 		841187C212AD2AA189BFAF92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97976E1074B8B897FEABFBA5 /* libPods.a */,
+				B71880253D73E8807085935F /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				15F12FEA1B3FEBB1005CFA5D /* Frameworks */,
 				15F12FEB1B3FEBB1005CFA5D /* Resources */,
 				0AA7F7EABF68AEB5CFF06F26 /* Copy Pods Resources */,
+				F75AF5B8DF5DE2861F3056DD /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +278,7 @@
 				TargetAttributes = {
 					15F12FEC1B3FEBB1005CFA5D = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = B7M5FV2D3R;
 					};
 					15F130041B3FEBB1005CFA5D = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -351,6 +356,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		F75AF5B8DF5DE2861F3056DD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -360,6 +380,7 @@
 			files = (
 				15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */,
 				15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */,
+				15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */,
 				15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */,
 				15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */,
 				15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */,
@@ -491,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -511,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -12,3 +12,9 @@
 #define COCOAPODS_VERSION_MINOR_GoogleMaps 10
 #define COCOAPODS_VERSION_PATCH_GoogleMaps 1
 
+// GooglePlacesAutocomplete
+#define COCOAPODS_POD_AVAILABLE_GooglePlacesAutocomplete
+#define COCOAPODS_VERSION_MAJOR_GooglePlacesAutocomplete 0
+#define COCOAPODS_VERSION_MINOR_GooglePlacesAutocomplete 3
+#define COCOAPODS_VERSION_PATCH_GooglePlacesAutocomplete 0
+

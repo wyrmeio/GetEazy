@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-GooglePlacesAutocomplete.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>D066A17900B1D813EBA12A63</key>
+		<key>323490CE79D70A9E631F4A6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B7E3E7E7C9E482490FD7A92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
