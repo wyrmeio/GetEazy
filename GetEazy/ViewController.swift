@@ -23,17 +23,20 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     var path:String!
     
     var locationMarker:GMSMarker!
-    
+    var check:Bool = false
     var locationManager = LocationManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       // self.location.rightView = UIView()
+        self.location.rightViewMode = UITextFieldViewMode.Always
+        self.location.rightView = UIImageView(image: UIImage(named: "location"))
+        
         
         path=fileInDocumentsDirectory("location.plist")
         self.location.delegate=self
+        
         
         self.manager=CLLocationManager()
         self.manager?.requestWhenInUseAuthorization()
@@ -68,8 +71,12 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         else {
            self.dismissViewControllerAnimated(true, completion: nil)
             
+            //(17.37000,longitude: 78.48000, zoom: 15)
             
-            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(17.37000,longitude: 78.48000, zoom: 15)
+            //let dir:CLLocationDirection
+            
+            if(!check){
+            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(17.37000, longitude: 78.48000, zoom: 15, bearing: 500.0, viewingAngle: 210.0)
             self.mapView.camera = camera
             self.mapView.delegate = self
             
@@ -78,7 +85,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             marker.title = "Hyderabad"
             marker.snippet = "Telangana"
             marker.map = self.mapView
-        }
+            }}
     }
     
     func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
@@ -197,6 +204,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func textFieldDidBeginEditing(textField: UITextField) {
         
+        check=true
         let gpaViewController = GooglePlacesAutocomplete(
             apiKey: "AIzaSyCAqLMNj_e3OHZfG9Qm1gRf6tsPLJGHGIA",
             placeType: .Address
@@ -282,7 +290,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
                 self.location.text = place["formattedAddress"]! as! String
             }
             
-            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(lat,longitude: lng, zoom: 15)
+            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(lat,longitude: lng, zoom: 15, bearing: 500.0, viewingAngle: 210.0)
             self.mapView.camera = camera
             
             locationMarker = GMSMarker(position: location.coordinate)
@@ -305,6 +313,15 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func fileInDocumentsDirectory(filename: String) -> String {
         return documentsDirectory().stringByAppendingPathComponent(filename)
+    }
+    
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        
+        let listingsVC = self.storyboard?.instantiateViewControllerWithIdentifier("Listings") as? ListingsViewController
+        
+        self.presentViewController(listingsVC!, animated: true, completion: nil)
+        
+        return false
     }
 
    
@@ -339,6 +356,55 @@ extension ViewController: GooglePlacesAutocompleteDelegate {
                 println("Place name \(place!.coordinate.longitude)")
                 println("Place address \(place!.formattedAddress)")
                 
+                
+                let userGeoPoint = PFGeoPoint(latitude: place!.coordinate.latitude, longitude: place!.coordinate.longitude)
+                // Create a query for places
+                var query = PFQuery(className:"Listings")
+                // Interested in locations near user.
+                query.whereKey("location", nearGeoPoint: userGeoPoint, withinKilometers: 10.0)
+                // Limit what could be a lot of points.
+                query.limit = 10
+                // Final list of objects
+                var placesObjects: [AnyObject]? = query.findObjects()
+                
+                //println(placesObjects!)
+                
+                var locArray:[GMSMarker] = []
+                
+                for obj in placesObjects! {
+                    
+                    let loc = obj["location"] as! PFGeoPoint
+                    
+                    locArray.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
+                    self.locationMarker = GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude))
+                    self.locationMarker.map = self.mapView
+                    
+                    self.locationMarker.appearAnimation = kGMSMarkerAnimationPop
+                    self.locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+                    self.locationMarker.opacity = 0.60
+                    
+                   //                    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
+//
+//                    for (GMSMarker *marker in <An array of your markers>)
+//                        bounds = [bounds includingCoordinate:marker.position];
+//                    
+//                    [<yourMap> animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:30.0f]];
+//
+
+                    
+                }
+                
+                var bounds:GMSCoordinateBounds=GMSCoordinateBounds()
+                for marker:GMSMarker in locArray {
+                    
+                    bounds = bounds.includingCoordinate(marker.position)
+
+                    
+                }
+                
+                 self.mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(bounds, withPadding: 30.0))
+                
+            
             } else {
                 println("No place details for \(placeID)")
             }
