@@ -14,16 +14,20 @@ import FBSDKLoginKit
 import CoreData
 import GoogleMaps
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var carousel : iCarousel = iCarousel()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
          GMSServices.provideAPIKey("AIzaSyCGgKqEgy8a8BmT2K1NKRjwYYr0BQLPg7Q")
+        
+        
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/ios_guide#localdatastore/iOS
         Parse.enableLocalDatastore()
@@ -32,7 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("aJJHUZneS561qefbs3R5V3Y0PCptAjGDZD90kJr2",
             clientKey: "HCon4phqAENwsyWs2RkadGfJ3GFYzksG6MuJi2vN")
         
-        PFTwitterUtils.initializeWithConsumerKey("VWGv7LdFXTDmp8lPRU4oN2d9U", consumerSecret: "iha8kwwa4Hpq4cYaocRkJwzhVgcLneTMKGb475VkVWCGCgoy9e")
+//        PFTwitterUtils.initializeWithConsumerKey("VWGv7LdFXTDmp8lPRU4oN2d9U", consumerSecret: "iha8kwwa4Hpq4cYaocRkJwzhVgcLneTMKGb475VkVWCGCgoy9e")
+        
+        
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         // [Optional] Track statistics around application opens.
@@ -65,10 +71,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+
+        
         return true
-        //return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
 
     }
+    
+    
+    func rotated()
+    {
+        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
+        {
+            println("Lanscape")
+            
+            carousel.reloadData()
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
+        {
+            println("Portrait")
+            
+            carousel.reloadData()
+            
+        }
+        
+    }
+
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()

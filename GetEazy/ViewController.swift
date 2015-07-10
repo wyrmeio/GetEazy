@@ -13,8 +13,9 @@ import FBSDKCoreKit
 import GoogleMaps
 import GooglePlacesAutocomplete
 
-class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, GMSMapViewDelegate,UITextFieldDelegate,GooglePlacesAutocompleteDelegate,CLLocationManagerDelegate  {
+class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, GMSMapViewDelegate,UITextFieldDelegate,GooglePlacesAutocompleteDelegate,CLLocationManagerDelegate {
 
+   
    
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var location: UITextField!
@@ -41,7 +42,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         self.manager=CLLocationManager()
         self.manager?.requestWhenInUseAuthorization()
         
-           }
+    }
     
     
     override func viewDidAppear(animated: Bool) {
@@ -53,7 +54,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         var login: MyLogInViewController = MyLogInViewController()
             login.fields = (PFLogInFields.UsernameAndPassword
                 | PFLogInFields.Facebook
-                | PFLogInFields.Twitter | PFLogInFields.LogInButton
+                | PFLogInFields.LogInButton
                 | PFLogInFields.SignUpButton
                 | PFLogInFields.PasswordForgotten
                 | PFLogInFields.DismissButton)
@@ -76,15 +77,17 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             //let dir:CLLocationDirection
             
             if(!check){
-            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(17.37000, longitude: 78.48000, zoom: 15, bearing: 500.0, viewingAngle: 210.0)
+            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(17.402561, longitude: 78.484803, zoom: 15)
             self.mapView.camera = camera
             self.mapView.delegate = self
+                
+                self.searchListingsOnMap(17.402561, longitude: 78.484803)
             
-            var marker = GMSMarker()
-            marker.position = CLLocationCoordinate2DMake(17.3700, 78.4800)
-            marker.title = "Hyderabad"
-            marker.snippet = "Telangana"
-            marker.map = self.mapView
+//            var marker = GMSMarker()
+//            marker.position = CLLocationCoordinate2DMake(17.3700, 78.4800)
+//            marker.title = "Hyderabad"
+//            marker.snippet = "Telangana"
+//            marker.map = self.mapView
             }}
     }
     
@@ -105,17 +108,19 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         
-        if (PFTwitterUtils.isLinkedWithUser(user)) {
-            
-            var twitterUsername = PFTwitterUtils.twitter()!.screenName
-            
-            PFUser.currentUser()!.username = twitterUsername
-            
-            PFUser.currentUser()!.saveEventually(nil)
-            
-        }
-        else if(PFFacebookUtils.isLinkedWithUser(user)){
-            
+//        if (PFTwitterUtils.isLinkedWithUser(user)) {
+//            
+//            var twitterUsername = PFTwitterUtils.twitter()!.screenName
+//            
+//            PFUser.currentUser()!.username = twitterUsername
+//            
+//            PFUser.currentUser()!.saveEventually(nil)
+//            
+//        }
+//        else 
+        
+        if(PFFacebookUtils.isLinkedWithUser(user)){
+        
             
             let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
             graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -150,15 +155,17 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         
         
-        if (PFTwitterUtils.isLinkedWithUser(user)) {
-            
-            var twitterUsername = PFTwitterUtils.twitter()!.screenName
-            
-            PFUser.currentUser()!.username = twitterUsername
-            
-            PFUser.currentUser()!.saveEventually(nil)
-            
-        } else if(PFFacebookUtils.isLinkedWithUser(user)){
+//        if (PFTwitterUtils.isLinkedWithUser(user)) {
+//            
+//            var twitterUsername = PFTwitterUtils.twitter()!.screenName
+//            
+//            PFUser.currentUser()!.username = twitterUsername
+//            
+//            PFUser.currentUser()!.saveEventually(nil)
+//            
+//        } else
+        
+            if(PFFacebookUtils.isLinkedWithUser(user)){
             
             let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
             graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -195,7 +202,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     }
     
     
-    
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
         
         println("User dismissed sign up.")
@@ -212,13 +218,13 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
         
-        gpaViewController.navigationBar.barStyle = UIBarStyle.Black
-        gpaViewController.navigationBar.translucent = true
-        gpaViewController.navigationBar.barTintColor = UIColor(red: 0.11, green: 0.27, blue: 0.53, alpha: 1.0)
-        gpaViewController.navigationBar.tintColor = UIColor.whiteColor()
-        gpaViewController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Copperplate", size: 25.0)!]
-        
-        gpaViewController.navigationItem.title = "Enter Location"
+//        gpaViewController.navigationBar.barStyle = UIBarStyle.Black
+//        gpaViewController.navigationBar.translucent = true
+//        gpaViewController.navigationBar.barTintColor = UIColor(red: 0.11, green: 0.27, blue: 0.53, alpha: 1.0)
+//        gpaViewController.navigationBar.tintColor = UIColor.whiteColor()
+//        gpaViewController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Copperplate", size: 25.0)!]
+//        
+//        gpaViewController.navigationItem.title = "Enter Location"
         
         self.presentViewController(gpaViewController, animated: true, completion: nil)
     }
@@ -317,7 +323,10 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         
+        let data = marker.userData
         let listingsVC = self.storyboard?.instantiateViewControllerWithIdentifier("Listings") as? ListingsViewController
+        
+        listingsVC!.data = data
         
         self.presentViewController(listingsVC!, animated: true, completion: nil)
         
@@ -328,6 +337,87 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func searchListingsOnMap(latitude: Double,longitude: Double){
+        
+        
+        let userGeoPoint = PFGeoPoint(latitude: latitude, longitude: longitude)
+        // Create a query for places
+        var query = PFQuery(className:"Listings")
+        // Interested in locations near user.
+        query.whereKey("location", nearGeoPoint: userGeoPoint, withinKilometers: 1.5)
+        // Limit what could be a lot of points.
+        query.limit = 10
+        // Final list of objects
+        var placesObjects: [AnyObject]? = query.findObjects()
+        
+        //println(placesObjects!)
+        
+        var locArray:[GMSMarker] = []
+        
+        self.mapView.clear()
+        var marker: [GMSMarker] = []
+        var i=0
+        
+        for obj in placesObjects! {
+            
+            
+            
+            let loc = obj["location"] as! PFGeoPoint
+            
+            locArray.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
+            
+            marker.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
+            marker[i].map = self.mapView
+            
+            marker[i].userData = obj
+            marker[i].appearAnimation = kGMSMarkerAnimationPop
+            //  self.locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+            
+            let sale:UIImage = UIImage(named: "sale")!
+            let rent:UIImage = UIImage(named: "rent")!
+            
+            let type = obj["type"] as! String
+            
+            if type == "Sale"
+            {
+                marker[i].icon = sale
+            }
+                
+            else{
+                marker[i].icon = rent
+            }
+            
+            i=i+1
+            // self.locationMarker.opacity = 0.8
+            
+            
+            
+        }
+        
+        
+        var circleCenter = CLLocationCoordinate2DMake(latitude, longitude)
+        var circ = GMSCircle(position: circleCenter, radius: 1500)
+        
+        // circ.fillColor = UIColor(red: 0.20, green: 0, blue: 0, alpha: 0.1)
+        
+        circ.strokeColor = UIColor.blueColor()
+        circ.strokeWidth = 1
+        circ.map = self.mapView
+        
+        //                                var bounds:GMSCoordinateBounds=GMSCoordinateBounds()
+        //                                for marker:GMSMarker in locArray {
+        //
+        //                                    bounds = bounds.includingCoordinate(marker.position)
+        //
+        //
+        //                                }
+        
+        // self.mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(bounds, withPadding: 30.0))
+        
+        self.mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 14))
+        
     }
 
 
@@ -357,53 +447,11 @@ extension ViewController: GooglePlacesAutocompleteDelegate {
                 println("Place address \(place!.formattedAddress)")
                 
                 
-                let userGeoPoint = PFGeoPoint(latitude: place!.coordinate.latitude, longitude: place!.coordinate.longitude)
-                // Create a query for places
-                var query = PFQuery(className:"Listings")
-                // Interested in locations near user.
-                query.whereKey("location", nearGeoPoint: userGeoPoint, withinKilometers: 10.0)
-                // Limit what could be a lot of points.
-                query.limit = 10
-                // Final list of objects
-                var placesObjects: [AnyObject]? = query.findObjects()
+                self.searchListingsOnMap(place!.coordinate.latitude,longitude: place!.coordinate.longitude)
                 
-                //println(placesObjects!)
+               
                 
-                var locArray:[GMSMarker] = []
-                
-                for obj in placesObjects! {
-                    
-                    let loc = obj["location"] as! PFGeoPoint
-                    
-                    locArray.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
-                    self.locationMarker = GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude))
-                    self.locationMarker.map = self.mapView
-                    
-                    self.locationMarker.appearAnimation = kGMSMarkerAnimationPop
-                    self.locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-                    self.locationMarker.opacity = 0.60
-                    
-                   //                    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
-//
-//                    for (GMSMarker *marker in <An array of your markers>)
-//                        bounds = [bounds includingCoordinate:marker.position];
-//                    
-//                    [<yourMap> animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:30.0f]];
-//
-
-                    
-                }
-                
-                var bounds:GMSCoordinateBounds=GMSCoordinateBounds()
-                for marker:GMSMarker in locArray {
-                    
-                    bounds = bounds.includingCoordinate(marker.position)
-
-                    
-                }
-                
-                 self.mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(bounds, withPadding: 30.0))
-                
+               
             
             } else {
                 println("No place details for \(placeID)")
@@ -414,6 +462,24 @@ extension ViewController: GooglePlacesAutocompleteDelegate {
         dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    
+//    func imageFromView(view:UIView) -> UIImage{
+//        
+//        if(UIScreen.mainScreen().respondsToSelector("scale")){
+//            UIGraphicsBeginImageContextWithOptions(view.frame.size, false, UIScreen.mainScreen().scale)
+//        }
+//        else {
+//            UIGraphicsBeginImageContext(view.frame.size)
+//        }
+//        
+//        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+//        
+//        var image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return image
+//        
+//    }
     
     func placeViewClosed() {
         dismissViewControllerAnimated(true, completion: nil)

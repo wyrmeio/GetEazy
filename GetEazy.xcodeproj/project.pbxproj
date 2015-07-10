@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15309DAD1B4D4DC5004D266A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15309DAC1B4D4DC5004D266A /* iCarousel.m */; };
+		15309DB01B4D4E22004D266A /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15309DAF1B4D4E22004D266A /* ReflectionView.m */; };
+		15376F4B1B4D3A0B0042C01F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15376F4A1B4D3A0B0042C01F /* Images.xcassets */; };
+		15376F511B4D4A150042C01F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15376F501B4D4A150042C01F /* Foundation.framework */; };
+		15376F531B4D4A1D0042C01F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15376F521B4D4A1D0042C01F /* UIKit.framework */; };
+		15E96CDF1B4F75A40073F45B /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */; };
 		15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */; };
 		15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF41B3FEBB1005CFA5D /* GetEazy.xcdatamodeld */; };
 		15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF71B3FEBB1005CFA5D /* ViewController.swift */; };
@@ -28,7 +34,6 @@
 		15F1302E1B3FECA8005CFA5D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1302D1B3FECA8005CFA5D /* libsqlite3.dylib */; };
 		15F130301B3FED8A005CFA5D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1302F1B3FED8A005CFA5D /* Accounts.framework */; };
 		15F130321B3FED91005CFA5D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130311B3FED91005CFA5D /* Social.framework */; };
-		15F130341B3FF048005CFA5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F130331B3FF048005CFA5D /* Images.xcassets */; };
 		15F1304F1B403E74005CFA5D /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F1304E1B403E74005CFA5D /* ParseFacebookUtilsV4.framework */; };
 		15F130551B4040AF005CFA5D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130541B4040AF005CFA5D /* FBSDKCoreKit.framework */; };
 		15F130571B4040B6005CFA5D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F130561B4040B6005CFA5D /* FBSDKLoginKit.framework */; };
@@ -36,7 +41,7 @@
 		15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130691B40DC42005CFA5D /* MyLogInViewController.swift */; };
 		15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */; };
 		15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1307F1B426BE5005CFA5D /* LocationManager.swift */; };
-		15F130821B429535005CFA5D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130811B429535005CFA5D /* ListingsViewController.swift */; };
+		15F130821B429535005CFA5D /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130811B429535005CFA5D /* CarouselViewController.swift */; };
 		666EC254818E0DBF4CC37B99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71880253D73E8807085935F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15309DAC1B4D4DC5004D266A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		15309DAE1B4D4DF3004D266A /* ReflectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
+		15309DAF1B4D4E22004D266A /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
+		15376F4A1B4D3A0B0042C01F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		15376F501B4D4A150042C01F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		15376F521B4D4A1D0042C01F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		15376F551B4D4D580042C01F /* iCarousel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		15F12FED1B3FEBB1005CFA5D /* GetEazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetEazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F12FF11B3FEBB1005CFA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +89,6 @@
 		15F1302D1B3FECA8005CFA5D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		15F1302F1B3FED8A005CFA5D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		15F130311B3FED91005CFA5D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		15F130331B3FF048005CFA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15F130471B403901005CFA5D /* GetEazy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GetEazy-Bridging-Header.h"; sourceTree = "<group>"; };
 		15F1304E1B403E74005CFA5D /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		15F130541B4040AF005CFA5D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -85,7 +97,7 @@
 		15F130691B40DC42005CFA5D /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
 		15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignUpViewController.swift; sourceTree = "<group>"; };
 		15F1307F1B426BE5005CFA5D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		15F130811B429535005CFA5D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		15F130811B429535005CFA5D /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		2F491A654AF53C1FA7FA2333 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		587FC971A8994DB8271917CB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B71880253D73E8807085935F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15376F531B4D4A1D0042C01F /* UIKit.framework in Frameworks */,
+				15376F511B4D4A150042C01F /* Foundation.framework in Frameworks */,
 				15F130321B3FED91005CFA5D /* Social.framework in Frameworks */,
 				15F130301B3FED8A005CFA5D /* Accounts.framework in Frameworks */,
 				15F1304F1B403E74005CFA5D /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -129,6 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15376F541B4D4D2A0042C01F /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				15376F551B4D4D580042C01F /* iCarousel.h */,
+				15309DAC1B4D4DC5004D266A /* iCarousel.m */,
+				15309DAE1B4D4DF3004D266A /* ReflectionView.h */,
+				15309DAF1B4D4E22004D266A /* ReflectionView.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
 		15F12FE41B3FEBB1005CFA5D = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +196,7 @@
 		15F12FEF1B3FEBB1005CFA5D /* GetEazy */ = {
 			isa = PBXGroup;
 			children = (
-				15F130331B3FF048005CFA5D /* Images.xcassets */,
+				15376F541B4D4D2A0042C01F /* iCarousel */,
 				15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */,
 				15F12FF71B3FEBB1005CFA5D /* ViewController.swift */,
 				15F12FF91B3FEBB1005CFA5D /* Main.storyboard */,
@@ -182,7 +207,9 @@
 				15F130691B40DC42005CFA5D /* MyLogInViewController.swift */,
 				15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */,
 				15F1307F1B426BE5005CFA5D /* LocationManager.swift */,
-				15F130811B429535005CFA5D /* ListingsViewController.swift */,
+				15F130811B429535005CFA5D /* CarouselViewController.swift */,
+				15376F4A1B4D3A0B0042C01F /* Images.xcassets */,
+				15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */,
 			);
 			path = GetEazy;
 			sourceTree = "<group>";
@@ -215,6 +242,8 @@
 		841187C212AD2AA189BFAF92 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15376F521B4D4A1D0042C01F /* UIKit.framework */,
+				15376F501B4D4A150042C01F /* Foundation.framework */,
 				B71880253D73E8807085935F /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -313,7 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15F130341B3FF048005CFA5D /* Images.xcassets in Resources */,
+				15376F4B1B4D3A0B0042C01F /* Images.xcassets in Resources */,
 				15F12FFB1B3FEBB1005CFA5D /* Main.storyboard in Resources */,
 				15F130001B3FEBB1005CFA5D /* LaunchScreen.xib in Resources */,
 			);
@@ -383,11 +412,14 @@
 			files = (
 				15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */,
 				15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */,
+				15309DB01B4D4E22004D266A /* ReflectionView.m in Sources */,
 				15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */,
 				15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */,
-				15F130821B429535005CFA5D /* ListingsViewController.swift in Sources */,
+				15F130821B429535005CFA5D /* CarouselViewController.swift in Sources */,
+				15309DAD1B4D4DC5004D266A /* iCarousel.m in Sources */,
 				15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */,
 				15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */,
+				15E96CDF1B4F75A40073F45B /* ListingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +556,7 @@
 					/Users/idrisjafer/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = GetEazy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetEazy/GetEazy-Bridging-Header.h";
@@ -545,6 +578,7 @@
 					/Users/idrisjafer/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = GetEazy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetEazy/GetEazy-Bridging-Header.h";
