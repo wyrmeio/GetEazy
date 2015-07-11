@@ -44,7 +44,74 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
     }
     
+
     
+    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
+        
+        
+        var visibleRegion:GMSVisibleRegion=mapView.projection.visibleRegion()
+        var bounds:GMSCoordinateBounds = GMSCoordinateBounds(region: visibleRegion)
+        
+        let northEast:CLLocationCoordinate2D = bounds.northEast
+        let southWest:CLLocationCoordinate2D = bounds.southWest
+        
+        
+        let swOfSF = PFGeoPoint(latitude:southWest.latitude , longitude:southWest.longitude)
+        let neOfSF = PFGeoPoint(latitude:northEast.latitude , longitude:northEast.longitude)
+        
+        var query = PFQuery(className:"Listings")
+        query.whereKey("location", withinGeoBoxFromSouthwest:swOfSF, toNortheast:neOfSF)
+        var placesObjects: [AnyObject]? = query.findObjects()
+        
+        var locArray:[GMSMarker] = []
+        
+        self.mapView.clear()
+        var marker: [GMSMarker] = []
+        var i=0
+        
+        if placesObjects?.count != 0 {
+            
+            for obj in placesObjects! {
+                
+                let loc = obj["location"] as! PFGeoPoint
+                
+                locArray.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
+                
+                marker.append(GMSMarker(position: CLLocationCoordinate2DMake(loc.latitude, loc.longitude)))
+                marker[i].map = self.mapView
+                
+                marker[i].userData = obj
+                marker[i].appearAnimation = kGMSMarkerAnimationPop
+                //  self.locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+                
+                let sale:UIImage = UIImage(named: "sale")!
+                let rent:UIImage = UIImage(named: "rent")!
+                
+                let type = obj["type"] as! String
+                
+                if type == "Sale"
+                {
+                    marker[i].icon = sale
+                }
+                    
+                else{
+                    marker[i].icon = rent
+                }
+                
+                i=i+1
+                
+            }
+            
+            self.mapView.animateToCameraPosition(position)
+
+        }
+        
+    }
+    
+   
+
+
+
     override func viewDidAppear(animated: Bool) {
         var user = PFUser.currentUser()
         
@@ -287,26 +354,26 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
             var newLoc: CLLocation =  CLLocation(latitude: lat, longitude: lng)
             NSKeyedArchiver.archiveRootObject(newLoc, toFile: path)
+            
+            self.searchListingsOnMap(lat, longitude: lng)
 
-    
-            locationManager.reverseGeocodeLocationUsingGoogleWithLatLon(latitude: lat, longitude: lng) { (reverseGeocodeInfo, placemark, error) -> Void in
-              
-                let place=reverseGeocodeInfo! as NSDictionary
-               
-                self.location.text = place["formattedAddress"]! as! String
-            }
+//            locationManager.reverseGeocodeLocationUsingGoogleWithLatLon(latitude: lat, longitude: lng) { (reverseGeocodeInfo, placemark, error) -> Void in
+//              
+//                let place=reverseGeocodeInfo! as NSDictionary
+//               
+//                self.location.text = place["formattedAddress"]! as! String
+//            }
             
-            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(lat,longitude: lng, zoom: 15, bearing: 500.0, viewingAngle: 210.0)
-            self.mapView.camera = camera
+//            let camera: GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(lat,longitude: lng, zoom: 15, bearing: 500.0, viewingAngle: 210.0)
+//            self.mapView.camera = camera
+//            
+//            locationMarker = GMSMarker(position: location.coordinate)
+//            locationMarker.map = self.mapView
+//            
+//            locationMarker.appearAnimation = kGMSMarkerAnimationPop
+//            locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+//            locationMarker.opacity = 0.75
             
-            locationMarker = GMSMarker(position: location.coordinate)
-            locationMarker.map = self.mapView
-            
-            locationMarker.appearAnimation = kGMSMarkerAnimationPop
-            locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-            locationMarker.opacity = 0.75
-            
-           // locationMarker.flat = true
            
         }
         
@@ -324,20 +391,24 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         
         check=true
-        let data = marker.userData
+        let data: AnyObject! = marker.userData
         let listingsVC = self.storyboard?.instantiateViewControllerWithIdentifier("Listings") as? ListingsViewController
         
         listingsVC!.data = data
         
         self.presentViewController(listingsVC!, animated: true, completion: nil)
         
-        return false
+        return true
     }
 
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+       
     }
     
     func searchListingsOnMap(latitude: Double,longitude: Double){
@@ -458,10 +529,10 @@ extension ViewController: GooglePlacesAutocompleteDelegate {
             if place != nil {
                 
                 self.location.text = place!.name as String
-                println("Place name \(place!.name)")
-                println("Place name \(place!.coordinate.latitude)")
-                println("Place name \(place!.coordinate.longitude)")
-                println("Place address \(place!.formattedAddress)")
+//                println("Place name \(place!.name)")
+//                println("Place name \(place!.coordinate.latitude)")
+//                println("Place name \(place!.coordinate.longitude)")
+//                println("Place address \(place!.formattedAddress)")
                 
                 
                 self.searchListingsOnMap(place!.coordinate.latitude,longitude: place!.coordinate.longitude)

@@ -83,7 +83,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-hJ-vBY" userLabel="MapView" customClass="GMSMapView">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-hJ-vBY" userLabel="MapView" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phi-zi-Vbm">
@@ -642,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75u-qW-WuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="-6"/>
+            <point key="canvasLocation" x="867" y="-6"/>
         </scene>
         <!--Slide View Controller-->
         <scene sceneID="Nki-4v-8DQ">
@@ -706,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwq-QX-Oiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="-6"/>
+            <point key="canvasLocation" x="867" y="675.75"/>
         </scene>
         <!--Listings View Controller-->
         <scene sceneID="Lh3-fh-Ps7">
@@ -1136,7 +1136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KG-JX-VkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="-6"/>
+            <point key="canvasLocation" x="103.5" y="675.75"/>
         </scene>
     </scenes>
     <resources>
