@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15309DAD1B4D4DC5004D266A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15309DAC1B4D4DC5004D266A /* iCarousel.m */; };
-		15309DB01B4D4E22004D266A /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15309DAF1B4D4E22004D266A /* ReflectionView.m */; };
 		15376F4B1B4D3A0B0042C01F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15376F4A1B4D3A0B0042C01F /* Images.xcassets */; };
 		15376F511B4D4A150042C01F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15376F501B4D4A150042C01F /* Foundation.framework */; };
 		15376F531B4D4A1D0042C01F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15376F521B4D4A1D0042C01F /* UIKit.framework */; };
 		15E96CDF1B4F75A40073F45B /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */; };
+		15E96CE31B4FE6050073F45B /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E96CE21B4FE6050073F45B /* KASlideShow.m */; };
+		15E96CE51B4FE65B0073F45B /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E96CE41B4FE65B0073F45B /* SlideViewController.swift */; };
+		15E96CEA1B4FE79F0073F45B /* test_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 15E96CE71B4FE79F0073F45B /* test_1.jpeg */; };
+		15E96CEB1B4FE79F0073F45B /* test_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 15E96CE81B4FE79F0073F45B /* test_2.jpeg */; };
+		15E96CEC1B4FE79F0073F45B /* test_3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 15E96CE91B4FE79F0073F45B /* test_3.jpeg */; };
 		15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */; };
 		15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF41B3FEBB1005CFA5D /* GetEazy.xcdatamodeld */; };
 		15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F12FF71B3FEBB1005CFA5D /* ViewController.swift */; };
@@ -41,7 +44,6 @@
 		15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130691B40DC42005CFA5D /* MyLogInViewController.swift */; };
 		15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */; };
 		15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1307F1B426BE5005CFA5D /* LocationManager.swift */; };
-		15F130821B429535005CFA5D /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F130811B429535005CFA5D /* CarouselViewController.swift */; };
 		666EC254818E0DBF4CC37B99 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71880253D73E8807085935F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -56,14 +58,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15309DAC1B4D4DC5004D266A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		15309DAE1B4D4DF3004D266A /* ReflectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
-		15309DAF1B4D4E22004D266A /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		15376F4A1B4D3A0B0042C01F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15376F501B4D4A150042C01F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		15376F521B4D4A1D0042C01F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		15376F551B4D4D580042C01F /* iCarousel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		15E96CE11B4FE5E00073F45B /* KASlideShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
+		15E96CE21B4FE6050073F45B /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
+		15E96CE41B4FE65B0073F45B /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		15E96CE71B4FE79F0073F45B /* test_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_1.jpeg; sourceTree = "<group>"; };
+		15E96CE81B4FE79F0073F45B /* test_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_2.jpeg; sourceTree = "<group>"; };
+		15E96CE91B4FE79F0073F45B /* test_3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_3.jpeg; sourceTree = "<group>"; };
 		15F12FED1B3FEBB1005CFA5D /* GetEazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetEazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F12FF11B3FEBB1005CFA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +101,6 @@
 		15F130691B40DC42005CFA5D /* MyLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLogInViewController.swift; sourceTree = "<group>"; };
 		15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignUpViewController.swift; sourceTree = "<group>"; };
 		15F1307F1B426BE5005CFA5D /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		15F130811B429535005CFA5D /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		2F491A654AF53C1FA7FA2333 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		587FC971A8994DB8271917CB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B71880253D73E8807085935F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,15 +146,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15376F541B4D4D2A0042C01F /* iCarousel */ = {
+		15E96CE01B4FE5B80073F45B /* SlideShow */ = {
 			isa = PBXGroup;
 			children = (
-				15376F551B4D4D580042C01F /* iCarousel.h */,
-				15309DAC1B4D4DC5004D266A /* iCarousel.m */,
-				15309DAE1B4D4DF3004D266A /* ReflectionView.h */,
-				15309DAF1B4D4E22004D266A /* ReflectionView.m */,
+				15E96CE11B4FE5E00073F45B /* KASlideShow.h */,
+				15E96CE21B4FE6050073F45B /* KASlideShow.m */,
 			);
-			name = iCarousel;
+			name = SlideShow;
+			sourceTree = "<group>";
+		};
+		15E96CE61B4FE77E0073F45B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				15E96CE71B4FE79F0073F45B /* test_1.jpeg */,
+				15E96CE81B4FE79F0073F45B /* test_2.jpeg */,
+				15E96CE91B4FE79F0073F45B /* test_3.jpeg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		15F12FE41B3FEBB1005CFA5D = {
@@ -196,7 +207,8 @@
 		15F12FEF1B3FEBB1005CFA5D /* GetEazy */ = {
 			isa = PBXGroup;
 			children = (
-				15376F541B4D4D2A0042C01F /* iCarousel */,
+				15E96CE61B4FE77E0073F45B /* images */,
+				15E96CE01B4FE5B80073F45B /* SlideShow */,
 				15F12FF21B3FEBB1005CFA5D /* AppDelegate.swift */,
 				15F12FF71B3FEBB1005CFA5D /* ViewController.swift */,
 				15F12FF91B3FEBB1005CFA5D /* Main.storyboard */,
@@ -207,9 +219,9 @@
 				15F130691B40DC42005CFA5D /* MyLogInViewController.swift */,
 				15F1306B1B40E635005CFA5D /* MySignUpViewController.swift */,
 				15F1307F1B426BE5005CFA5D /* LocationManager.swift */,
-				15F130811B429535005CFA5D /* CarouselViewController.swift */,
 				15376F4A1B4D3A0B0042C01F /* Images.xcassets */,
 				15E96CDE1B4F75A40073F45B /* ListingsViewController.swift */,
+				15E96CE41B4FE65B0073F45B /* SlideViewController.swift */,
 			);
 			path = GetEazy;
 			sourceTree = "<group>";
@@ -345,6 +357,9 @@
 				15376F4B1B4D3A0B0042C01F /* Images.xcassets in Resources */,
 				15F12FFB1B3FEBB1005CFA5D /* Main.storyboard in Resources */,
 				15F130001B3FEBB1005CFA5D /* LaunchScreen.xib in Resources */,
+				15E96CEB1B4FE79F0073F45B /* test_2.jpeg in Resources */,
+				15E96CEA1B4FE79F0073F45B /* test_1.jpeg in Resources */,
+				15E96CEC1B4FE79F0073F45B /* test_3.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,11 +427,10 @@
 			files = (
 				15F1306A1B40DC42005CFA5D /* MyLogInViewController.swift in Sources */,
 				15F1306C1B40E635005CFA5D /* MySignUpViewController.swift in Sources */,
-				15309DB01B4D4E22004D266A /* ReflectionView.m in Sources */,
 				15F130801B426BE5005CFA5D /* LocationManager.swift in Sources */,
 				15F12FF81B3FEBB1005CFA5D /* ViewController.swift in Sources */,
-				15F130821B429535005CFA5D /* CarouselViewController.swift in Sources */,
-				15309DAD1B4D4DC5004D266A /* iCarousel.m in Sources */,
+				15E96CE31B4FE6050073F45B /* KASlideShow.m in Sources */,
+				15E96CE51B4FE65B0073F45B /* SlideViewController.swift in Sources */,
 				15F12FF31B3FEBB1005CFA5D /* AppDelegate.swift in Sources */,
 				15F12FF61B3FEBB1005CFA5D /* GetEazy.xcdatamodeld in Sources */,
 				15E96CDF1B4F75A40073F45B /* ListingsViewController.swift in Sources */,

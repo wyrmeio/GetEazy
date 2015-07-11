@@ -4,5 +4,4 @@
 
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <ParseUI/ParseUI.h>
-#import "iCarousel.h"
-#import "ReflectionView.h"
+#import "KASlideShow.h"

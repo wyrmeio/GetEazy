@@ -9,11 +9,12 @@
 import UIKit
 import Parse
 
-class ListingsViewController: UIViewController {
+class ListingsViewController: UIViewController,KASlideShowDelegate {
 
     
     
-    @IBOutlet weak var imageView: PFImageView!
+    @IBOutlet weak var slideShow: KASlideShow!
+   // @IBOutlet weak var imageView: PFImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var area: UILabel!
     @IBOutlet weak var address: UILabel!
@@ -34,14 +35,15 @@ class ListingsViewController: UIViewController {
         
        // let imageView = PFImageView()
         
-        imageView.image = UIImage(named: "coming_soon")
-        imageView.file = listing["p1"] as! PFFile // remote image
+//        imageView.image = UIImage(named: "coming_soon")
+//        imageView.file = listing["p1"] as? PFFile // remote image
+//        
+//        imageView.loadInBackground()
         
-        imageView.loadInBackground()
         
-        self.name.text = listing["bhk"] as! String
-        self.area.text = listing["area"] as! String
-        self.address.text = listing["address"] as! String
+        self.name.text = listing["bhk"] as? String
+        self.area.text = listing["area"] as? String
+        self.address.text = listing["address"] as? String
         
         let amount = listing["price"] as! NSNumber
         self.price.text = "Rs. \(amount)"
@@ -49,14 +51,47 @@ class ListingsViewController: UIViewController {
         let house_type = listing["type"] as! String
         self.type.text = "For \(house_type)"
         
-        self.bed.text = listing["bed"] as! String
-        self.bath.text = listing["bath"] as! String
-        self.parking.text = listing["parking"] as! String
-        self.lift.text = listing["lift"] as! String
+        self.bed.text = listing["bed"] as? String
+        self.bath.text = listing["bath"] as? String
+        self.parking.text = listing["parking"] as? String
+        self.lift.text = listing["lift"] as? String
         
-        self.desc.text = listing["desc"] as! String
+        self.desc.text = listing["desc"] as? String
         
         
+        // Create a query for places
+        var query = PFQuery(className:"Listings")
+        // Interested in locations near user.
+        
+        
+        query.includeKey("images")
+        
+        var placesObjects: PFObject? = query.getObjectWithId(listing.objectId!)
+        
+        let count = placesObjects?.objectForKey("images")!.objectForKey("files") as! Int
+        
+        
+        slideShow.delegate = self
+        
+        slideShow.delay = 5.0
+        slideShow.transitionDuration = 1
+        slideShow.transitionType = KASlideShowTransitionType.Slide
+        slideShow.imagesContentMode = UIViewContentMode.ScaleToFill
+        
+
+        for var i=1;i<=count;i++ {
+            
+            let image:PFFile = placesObjects?.objectForKey("images")!.objectForKey("p\(i)") as! PFFile
+            
+            image.getDataInBackgroundWithBlock { (data:NSData?, error:NSError?) -> Void in
+                self.slideShow.addImage(UIImage(data: data!))
+            }
+            
+        }
+        
+        slideShow.addGesture(KASlideShowGestureType.Swipe)
+        
+        slideShow.start()
         
     }
 
@@ -67,6 +102,7 @@ class ListingsViewController: UIViewController {
     
     @IBAction func closeListing(sender: AnyObject) {
         
+        self.slideShow.stop()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

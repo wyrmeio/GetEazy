@@ -323,6 +323,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         
+        check=true
         let data = marker.userData
         let listingsVC = self.storyboard?.instantiateViewControllerWithIdentifier("Listings") as? ListingsViewController
         
@@ -346,9 +347,9 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         // Create a query for places
         var query = PFQuery(className:"Listings")
         // Interested in locations near user.
-        query.whereKey("location", nearGeoPoint: userGeoPoint, withinKilometers: 1.5)
+        query.whereKey("location", nearGeoPoint: userGeoPoint, withinKilometers: 4.0)
         // Limit what could be a lot of points.
-        query.limit = 10
+        query.limit = 100
         // Final list of objects
         var placesObjects: [AnyObject]? = query.findObjects()
         
@@ -360,9 +361,9 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         var marker: [GMSMarker] = []
         var i=0
         
+        if placesObjects?.count != 0 {
+            
         for obj in placesObjects! {
-            
-            
             
             let loc = obj["location"] as! PFGeoPoint
             
@@ -395,31 +396,47 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
             
         }
-        
-        
-        var circleCenter = CLLocationCoordinate2DMake(latitude, longitude)
-        var circ = GMSCircle(position: circleCenter, radius: 1500)
-        
-        // circ.fillColor = UIColor(red: 0.20, green: 0, blue: 0, alpha: 0.1)
-        
-        circ.strokeColor = UIColor.blueColor()
-        circ.strokeWidth = 1
-        circ.map = self.mapView
-        
-        //                                var bounds:GMSCoordinateBounds=GMSCoordinateBounds()
-        //                                for marker:GMSMarker in locArray {
-        //
-        //                                    bounds = bounds.includingCoordinate(marker.position)
-        //
-        //
-        //                                }
-        
-        // self.mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(bounds, withPadding: 30.0))
-        
-        self.mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 14))
+            
+            //        var circleCenter = CLLocationCoordinate2DMake(latitude, longitude)
+            //        var circ = GMSCircle(position: circleCenter, radius: 1500)
+            //
+            //        // circ.fillColor = UIColor(red: 0.20, green: 0, blue: 0, alpha: 0.1)
+            //
+            //        circ.strokeColor = UIColor.blueColor()
+            //        circ.strokeWidth = 1
+            //        circ.map = self.mapView
+            
+            var bounds:GMSCoordinateBounds=GMSCoordinateBounds()
+            for marker:GMSMarker in locArray {
+                
+                bounds = bounds.includingCoordinate(marker.position)
+                
+                
+            }
+            
+            self.mapView.animateWithCameraUpdate(GMSCameraUpdate.fitBounds(bounds, withPadding: 30.0))
+            
+           
+            
+
+        }
+        else{
+            
+              self.mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 14))
+            self.showAlertMessage("No results found",msg:"Try searching for different location.")
+            
+        }
         
     }
-
+    
+    func showAlertMessage(title:String,msg: String){
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertAction = UIAlertAction(title: "i will try again", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+        alert.addAction(alertAction)
+        presentViewController(alert, animated: true) { () -> Void in }
+    
+    }
 
 }
 
@@ -449,9 +466,6 @@ extension ViewController: GooglePlacesAutocompleteDelegate {
                 
                 self.searchListingsOnMap(place!.coordinate.latitude,longitude: place!.coordinate.longitude)
                 
-               
-                
-               
             
             } else {
                 println("No place details for \(placeID)")

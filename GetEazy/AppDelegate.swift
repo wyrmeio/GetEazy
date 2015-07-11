@@ -19,9 +19,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var carousel : iCarousel = iCarousel()
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -72,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
 
         
         return true
@@ -80,26 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
-    
-    func rotated()
-    {
-        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
-        {
-            println("Lanscape")
-            
-            carousel.reloadData()
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
-        {
-            println("Portrait")
-            
-            carousel.reloadData()
-            
-        }
-        
-    }
-
+  
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
